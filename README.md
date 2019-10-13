@@ -43,18 +43,26 @@
 ## 其它说明
   如需设置后台不播放，返回页面继续播放，请在使用插件的页面内监听：
   
-    ```JavaScript
-    onShow() {
-      if (this.videoContext) {
-        this.videoContext.play();
-       }
-    },
-    onReady: function() {
-     this.videoContext = uni.createVideoContext('video', this);
-    },
-    onHide: function() {
-      if (this.videoContext) {
-        this.videoContext.stop();
+  ```JavaScript
+      onShow() {
+        if (this.videoContext) {
+          this.videoContext.play();
+         }
+      },
+      onReady: function() {
+       this.videoContext = uni.createVideoContext('video', this);
+      },
+      onHide: function() {
+        if (this.videoContext) {
+          this.videoContext.stop();
+        }
       }
-    }
+  ```
+## 发弹幕使用
+
+  ```JavaScript
+    this.videoContext.sendDanmu({
+      text: this.danmuValue,
+      color: "#FFF"
+    });
   ```

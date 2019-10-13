@@ -1,0 +1,47 @@
+<template>
+	<div><yy-video-player :auto-play="false" :url="url"  :poster="poster" :danmu-list="danmuList"  :show-back-btn="true"></yy-video-player></div>
+</template>
+<!-- :show-back-btn="false" :show-download-btn="false" :process-bar-color="'#666'" -->
+<script>
+import yyVideoPlayer from '@/components/yy-video-player.nvue';
+export default {
+	components: {
+		yyVideoPlayer
+	},
+	data() {
+		return {
+			url: 'http://vt1.doubanio.com/201910131716/ff3b54448cd1c56470bfb9ff1451922c/view/movie/M/402300311.mp4',
+			poster: 'https://img3.doubanio.com/img/trailer/medium/2520459021.jpg',
+			danmuList: [
+				{
+					text: 'lalala',
+					color: '#ff0000',
+					time: 1
+				},
+				{
+					text: '我是yy-video-player',
+					color: '#ff00ff',
+					time: 3
+				}
+			]
+		};
+	},
+	onLoad() {},
+	onShow() {
+		if (this.videoContext) {
+			this.videoContext.play();
+		}
+	},
+	onReady: function() {
+		this.videoContext = uni.createVideoContext('video', this);
+	},
+	onHide: function() {
+		if (this.videoContext) {
+			this.videoContext.stop();
+		}
+	},
+	methods: {}
+};
+</script>
+
+<style></style>

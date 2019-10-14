@@ -13,13 +13,13 @@
 			@fullscreenchange="setFullScreenStatus"
 			@timeupdate="timeUpdate"
 		>
-			<cover-view class="back-button" @click="back" v-if="!isFullScreen && showBackBtn"><image src="../../static/back-white.png" class="back-icon"></image></cover-view>
+			<cover-view class="back-button" @click="back" v-if="!isFullScreen && showBackBtn"><image src="../../static/yy-video-player/back-white.png" class="back-icon"></image></cover-view>
 			<cover-view v-if="showDownloadBtn&&!isFullScreen" class="download-button" @click="download(url)">
-				<image v-if="!isDownloading" src="../../static/download.png" class="back-icon"></image>
+				<image v-if="!isDownloading" src="../../static/yy-video-player/download.png" class="back-icon"></image>
 				<text v-else class="process-text">{{ progressValue }}%</text>
 			</cover-view>
 			<cover-view v-if="showDownloadBtn&&isFullScreen" :style="{'margin-top':screenWidth/2.3}" class="download-icon-horizontal" @click="download(url)">
-				<image v-if="!isDownloading" src="../../static/download.png" class="back-icon"></image>
+				<image v-if="!isDownloading" src="../../static/yy-video-player/download.png" class="back-icon"></image>
 				<text v-else class="process-text-horizontal">{{ progressValue }}%</text>
 			</cover-view>
 		</video>

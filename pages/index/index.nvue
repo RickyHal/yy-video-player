@@ -3,7 +3,7 @@
 </template>
 <!-- :show-back-btn="false" :show-download-btn="false" :process-bar-color="'#666'" -->
 <script>
-import yyVideoPlayer from '@/components/yy-video-player.nvue';
+import yyVideoPlayer from '@/components/yy-video-player/yy-video-player.nvue';
 export default {
 	components: {
 		yyVideoPlayer
